@@ -1,0 +1,19 @@
+<single-spa-router>
+  <nav>
+    <application name="@single-spa/transversal"></application>
+  </nav>
+  <main>
+    <redirect from="/" to="/pokemons"></redirect>
+    <!-- products -->
+    <route path="/pokemons">
+      <application name="@single-spa/pokemons"></application>
+      <route path=":id" component={PokemonsPageDatail}>
+        <application name="@single-spa/pokemons"></application>
+      </route>
+    </route>
+    <!-- products -->
+    <route default>
+      <h1>404 Not Found</h1>
+    </route>
+  </main>
+</single-spa-router>
